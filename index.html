@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rajwan Protfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function HelloWorld(props) {               
+        return ( 
+          <div>         
+            <h1>Hi {props.name}</h1>          
+            <MyAgeClass age={props.age} />
+            <MyEducation university={props.education} />
+          </div>
+        );
+      }            
+      class MyAgeClass extends React.Component {
+        render() {
+          var props = this.props;
+          return (
+            <h2>My age: {props.age}</h2>
+          );
+        }
+}
+   class MyEducation extends React.Component {
+        render() {
+          var props = this.props;
+          return (
+            <h2>My university: {props.education}</h2>
+          )
+        }
+
+
+
+      } 
+
+class Navbar extends React.Component{
+  
+  render(){
+
+  var props = this.props;
+
+return (
+
+
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark navbar bg-dark ">
+
+    <a href="" class="navbar-brand">{props.logo}</a>
+
+    <div class="container">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle"
+                                                 data-toggle="dropdown">Service</a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="nav-item"><a href="" class="nav-link">Service one</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Service two</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Service three</a></li>
+                    </ul>
+
+
+                </li>
+                <li class="nav-item"><a href="" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+            </ul>
+
+          
+
+            <ul class="navbar-nav">
+            <li class="nav-item"><a href="" class="nav-link"data-toggle="modal" data-target="#myModalLogin"> Login </a></li>
+            <li class="nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#myModalSingup"> Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+
+);
+
+
+}
+}
+
+
+
+      ReactDOM.render(
+      <div>
+        <Navbar logo="Rajwan's Protfolio"/>
+          <HelloWorld name="Rajwan" age="23" education=" Daffodil International University"/> 
+      </div>,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
